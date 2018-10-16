@@ -20,11 +20,15 @@
 	var cat = new Cat("Amy");
 	cat.move();
 
+	console.log('----------------------------------------------------------------');
+	
 	// override method
 	Cat.prototype.move = function() {
 		console.log(this._name + ' starts jumping...');
 	};
 	cat.move();
+
+	console.log('----------------------------------------------------------------');
 
 	// call super
 	var superMove = Animal.prototype.move;

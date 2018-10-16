@@ -10,7 +10,7 @@
 		}
 	}
 
-	bird.move();
+	bird.move1();
 
 	// function
 	function Dog() {

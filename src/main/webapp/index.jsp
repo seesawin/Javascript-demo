@@ -27,6 +27,8 @@
 	<!-- Download -->
 	<a href="Download001.jsp">Download001</a>
 	<br>
+	<a href="Download002.jsp">Download002</a>
+	<br>
 
 	<!-- Upload -->
 
