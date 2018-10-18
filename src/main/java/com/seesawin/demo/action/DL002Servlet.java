@@ -34,6 +34,13 @@ public class DL002Servlet extends BaseHttpServlet {
 		System.out.println("get sesstion...");
 		
 		if ("generate".equals(action)) {
+			// for loading test
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e1) {
+				e1.printStackTrace();
+			}
+			
 			Map<String, Object> resultMap = new HashMap<String, Object>();
 			GsonBuilder gb = new GsonBuilder().serializeNulls();
 			Gson gson = gb.create();

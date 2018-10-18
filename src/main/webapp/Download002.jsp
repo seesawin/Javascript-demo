@@ -5,9 +5,35 @@
 <meta charset="utf-8">
 <title>Download Basic</title>
 <script src="js/basic.js"></script>
+<style>
+.myloading {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100px;
+	background: rgba(255, 255, 255, .8)
+		url('http://sampsonresume.com/labs/pIkfp.gif') 50% 50% no-repeat;
+}
+
+.divBar {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+</style>
 </head>
 
 <body>
+	<div id="loadingDiv" class="divBar" style="display:none">
+		<img id="loading" class="" />
+	</div>
+    <br><br><br><br>
+    
 	<a href="index.jsp">Return Index</a>
 	<br> Download
 	<hr>
@@ -20,7 +46,19 @@
 	</form>
 
 	<script>
+		function wait(ms){
+			var start = new Date().getTime();
+			var end = start;
+			while(end < start + ms) {
+				end = new Date().getTime();
+			}
+		}
+		
 		function doExport() {
+			console.log('open loading...');
+			document.getElementById("loading").className = "myloading";
+			document.getElementById("loadingDiv").style.display = "block";
+			
 			var input = document.getElementById('inputName').value;
 			document.getElementById('fileName').value = input;
 			
@@ -60,6 +98,10 @@
 			} else {
 				alert(ret.ERR_MSG);
 			}
+			
+			console.log('close loading...');
+			document.getElementById("loading").className = "";
+			document.getElementById("loadingDiv").style.display = "none";
 		}
 	</script>
 </body>
